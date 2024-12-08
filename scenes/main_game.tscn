@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsqwalasrsbof"]
+
+[ext_resource type="PackedScene" uid="uid://t2dx6a318gcy" path="res://scenes/platformer_level.tscn" id="1_c60nr"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LineLeft" type="SubViewportContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 720)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/LineLeft"]
+handle_input_locally = false
+size = Vector2i(256, 724)
+render_target_update_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 720)
+layout_mode = 2
+alignment = 1
+
+[node name="Platformer" type="SubViewportContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(768, 512)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+stretch = true
+
+[node name="PlatformerSubViewport" type="SubViewport" parent="HBoxContainer/VBoxContainer/Platformer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(768, 512)
+render_target_update_mode = 4
+
+[node name="PlatformerLevel" parent="HBoxContainer/VBoxContainer/Platformer/PlatformerSubViewport" instance=ExtResource("1_c60nr")]
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 208)
+layout_mode = 2
+
+[node name="LineRight" type="SubViewportContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 720)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/LineRight"]
+handle_input_locally = false
+size = Vector2i(256, 724)
+render_target_update_mode = 4

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerMovementData" load_steps=2 format=3 uid="uid://c02vnaodyvfmd"]
+
+[ext_resource type="Script" path="res://scripts/movement/player_movement_data.gd" id="1_3s2ad"]
+
+[resource]
+script = ExtResource("1_3s2ad")
+current_speed = 0.0
+top_speed = 500.0
+acceleration = 1000.0
+friction = 2000.0
+air_friction = 8000.0
+jump_velocity = 500.0
+speed_jump_mult = 0.1
+coyote_jump_timer = 0.1
+wall_slide_speed = 100.0
+max_tilt_angle = 15.0
