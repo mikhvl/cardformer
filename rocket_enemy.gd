@@ -6,7 +6,7 @@ extends CharacterBody2D
 var target = null
 
 func _ready() -> void:
-	rocket_timer.start(5)
+	rocket_timer.start(randi_range(2, 4))
 
 func shoot():
 	var b = rocket_instance.instantiate() as Missile
@@ -18,10 +18,11 @@ func shoot():
 
 func _on_rocket_launch_timer_timeout() -> void:
 	shoot()
-	rocket_timer.start(5)
+	rocket_timer.start(randi_range(2, 4))
 
 
 func _on_enemy_detector_body_entered(body: Node2D) -> void:
+	print(body)
 	if body.name == "PlatformerPlayer" and target == null:
 		target = body
 

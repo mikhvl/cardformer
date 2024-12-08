@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tuh0dmgkkw3m"
 path.s3tc="res://.godot/imported/card_clubs_J.png-9b2febc71dc8ab4ddcb56ec99134d241.s3tc.ctex"
+path.etc2="res://.godot/imported/card_clubs_J.png-9b2febc71dc8ab4ddcb56ec99134d241.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/card_assets/card_clubs_J.png"
-dest_files=["res://.godot/imported/card_clubs_J.png-9b2febc71dc8ab4ddcb56ec99134d241.s3tc.ctex"]
+dest_files=["res://.godot/imported/card_clubs_J.png-9b2febc71dc8ab4ddcb56ec99134d241.s3tc.ctex", "res://.godot/imported/card_clubs_J.png-9b2febc71dc8ab4ddcb56ec99134d241.etc2.ctex"]
 
 [params]
 

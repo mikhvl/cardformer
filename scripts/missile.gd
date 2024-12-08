@@ -2,9 +2,9 @@ class_name Missile extends RigidBody2D
 
 @export var lifetime = 20.0
 
-@export var max_speed = 300.0
+@export var max_speed = 150.0
 @export var drag_factor = 0.2
-@export var acceleration = 55.0
+@export var acceleration = 40.0
 
 var _current_velocity = Vector2.ZERO
 var _current_speed = 0

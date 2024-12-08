@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8hkkglxxd5yy"
 path.s3tc="res://.godot/imported/card_hearts_Q.png-66d05383d59c95847d31087b7e08899c.s3tc.ctex"
+path.etc2="res://.godot/imported/card_hearts_Q.png-66d05383d59c95847d31087b7e08899c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/card_assets/card_hearts_Q.png"
-dest_files=["res://.godot/imported/card_hearts_Q.png-66d05383d59c95847d31087b7e08899c.s3tc.ctex"]
+dest_files=["res://.godot/imported/card_hearts_Q.png-66d05383d59c95847d31087b7e08899c.s3tc.ctex", "res://.godot/imported/card_hearts_Q.png-66d05383d59c95847d31087b7e08899c.etc2.ctex"]
 
 [params]
 

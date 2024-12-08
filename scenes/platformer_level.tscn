@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://t2dx6a318gcy"]
+[gd_scene load_steps=10 format=4 uid="uid://t2dx6a318gcy"]
 
 [ext_resource type="Texture2D" uid="uid://cumjyb7ft2wxr" path="res://assets/[FREE] Industrial Tileset/5. Industrial Tileset - Starter Pack 32p/0_Template_Tileset.png" id="1_qwfbm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_iefqd"]
 [ext_resource type="PackedScene" uid="uid://dfsj00qcitdmw" path="res://scenes/platformer_player.tscn" id="2_whsx6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_6pu7b"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_t4aal"]
+[ext_resource type="PackedScene" uid="uid://d15jlhxi106yp" path="res://scenes/rocket_enemy.tscn" id="6_yyln1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tef38"]
 texture = ExtResource("1_qwfbm")
@@ -209,7 +210,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_4vfxr"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 0
+physics_layer_0/collision_mask = 9
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
@@ -252,3 +253,99 @@ zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_tycf6")
 tween_on_load = false
 follow_damping = true
+draw_limits = true
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="RocketEnemy" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1704, -2272)
+
+[node name="RocketEnemy2" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(2482, -2944)
+
+[node name="RocketEnemy3" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1392, -3272)
+
+[node name="RocketEnemy4" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3032, -3368)
+
+[node name="RocketEnemy5" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(976, -2400)
+
+[node name="RocketEnemy6" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1192, -1704)
+
+[node name="RocketEnemy7" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3176, -2256)
+
+[node name="RocketEnemy8" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(2472, -1816)
+
+[node name="RocketEnemy9" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(2480, -1272)
+
+[node name="RocketEnemy10" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1488, -512)
+
+[node name="RocketEnemy11" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(424, -440)
+
+[node name="RocketEnemy12" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(440, -1456)
+
+[node name="RocketEnemy13" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(112, -2336)
+
+[node name="RocketEnemy14" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(384, -3936)
+
+[node name="RocketEnemy15" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(560, -3272)
+
+[node name="RocketEnemy16" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1272, -3984)
+
+[node name="RocketEnemy17" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1952, -3728)
+
+[node name="RocketEnemy18" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(2482, -3912)
+
+[node name="RocketEnemy19" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3296, -3976)
+
+[node name="RocketEnemy20" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(4048, -3768)
+
+[node name="RocketEnemy21" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(4704, -3912)
+
+[node name="RocketEnemy22" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3552, -2968)
+
+[node name="RocketEnemy23" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3992, -2456)
+
+[node name="RocketEnemy24" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(4864, -2216)
+
+[node name="RocketEnemy25" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3744, -1712)
+
+[node name="RocketEnemy26" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3296, -984)
+
+[node name="RocketEnemy27" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(2472, -400)
+
+[node name="RocketEnemy28" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(3512, -320)
+
+[node name="RocketEnemy29" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(4120, -1000)
+
+[node name="RocketEnemy30" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(4808, -384)
+
+[node name="RocketEnemy31" parent="Enemies" instance=ExtResource("6_yyln1")]
+position = Vector2(1664, -1256)

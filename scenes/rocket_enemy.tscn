@@ -12,7 +12,7 @@ radius = 386.0
 
 [node name="RocketEnemy" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_qravd")
 rocket_instance = ExtResource("2_ef5qj")
 
@@ -28,9 +28,8 @@ shape = SubResource("CircleShape2D_57m7j")
 [node name="RocketLaunchTimer" type="Timer" parent="."]
 
 [node name="EnemyDetector" type="Area2D" parent="."]
-disable_mode = 2
 collision_layer = 0
-collision_mask = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 shape = SubResource("CircleShape2D_qkmy1")

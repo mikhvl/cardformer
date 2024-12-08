@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsqwalasrsbof"]
+[gd_scene load_steps=7 format=3 uid="uid://bsqwalasrsbof"]
 
 [ext_resource type="PackedScene" uid="uid://t2dx6a318gcy" path="res://scenes/platformer_level.tscn" id="1_c60nr"]
+[ext_resource type="Texture2D" uid="uid://cjn4hu85dveg5" path="res://assets/card_assets/card_clubs_02.png" id="2_adit0"]
+[ext_resource type="Texture2D" uid="uid://c87yqalc5tie" path="res://assets/card_assets/card_clubs_03.png" id="3_dukn0"]
+[ext_resource type="Texture2D" uid="uid://ddlyu6pg6jtar" path="res://assets/card_assets/card_spades_A.png" id="4_36gf0"]
+[ext_resource type="Texture2D" uid="uid://fwr4di8poij3" path="res://assets/card_assets/card_joker.png" id="5_pv1tw"]
+[ext_resource type="AudioStream" uid="uid://bh2vgahkuw5b2" path="res://scenes/battle_hard.wav" id="6_bushc"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -21,15 +26,25 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="LineLeft" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="LineLeftContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 720)
+layout_mode = 2
+
+[node name="LineLeft" type="SubViewportContainer" parent="HBoxContainer/LineLeftContainer"]
+visible = false
 custom_minimum_size = Vector2(256, 720)
 layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/LineLeft"]
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/LineLeftContainer/LineLeft"]
 handle_input_locally = false
-size = Vector2i(256, 724)
-render_target_update_mode = 4
+size = Vector2i(256, 720)
+render_target_update_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/LineLeftContainer"]
+layout_mode = 2
+text = "Здесь линия левая для стратегии"
+fit_content = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(0, 720)
@@ -55,12 +70,43 @@ render_target_update_mode = 4
 custom_minimum_size = Vector2(0, 208)
 layout_mode = 2
 
-[node name="LineRight" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="CardClubs02" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
+position = Vector2(112, 624)
+texture = ExtResource("2_adit0")
+
+[node name="CardClubs03" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
+position = Vector2(272, 624)
+texture = ExtResource("3_dukn0")
+
+[node name="CardSpadesA" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
+position = Vector2(432, 624)
+texture = ExtResource("4_36gf0")
+
+[node name="CardJoker" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
+position = Vector2(592, 624)
+texture = ExtResource("5_pv1tw")
+
+[node name="LineRightContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 720)
+layout_mode = 2
+
+[node name="LineRight" type="SubViewportContainer" parent="HBoxContainer/LineRightContainer"]
+visible = false
 custom_minimum_size = Vector2(256, 720)
 layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/LineRight"]
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/LineRightContainer/LineRight"]
 handle_input_locally = false
-size = Vector2i(256, 724)
-render_target_update_mode = 4
+size = Vector2i(256, 720)
+render_target_update_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/LineRightContainer"]
+layout_mode = 2
+text = "Здесь правая левая для стратегии"
+fit_content = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bushc")
+volume_db = -9.0
+autoplay = true
