@@ -1,22 +1,18 @@
-extends RigidBody2D
+class_name Missile extends RigidBody2D
 
 @export var lifetime = 20.0
 
 @export var max_speed = 300.0
-@export var drag_factor = 0.05
-@export var acceleration = 65.0
+@export var drag_factor = 0.2
+@export var acceleration = 55.0
 
 var _current_velocity = Vector2.ZERO
 var _current_speed = 0
 
 @onready var _sprite = $Sprite2D
-@onready var target: CharacterBody2D = get_tree().get_nodes_in_group("PlatformerPlayer")[0]
-
-@onready var _collision: Area2D = $EnemyDetector
+var target = null
 
 func _ready():
-	_collision.body_entered.connect(queue_free)
-	
 	var timer := get_tree().create_timer(lifetime)
 	timer.timeout.connect(queue_free)
 	
@@ -36,7 +32,22 @@ func _physics_process(delta: float) -> void:
 	
 	_current_velocity += change * delta
 	
-	position += _current_velocity * acceleration * delta
-	for b in get_colliding_bodies():
-		queue_free()
 	look_at(global_position + _current_velocity)
+	move_and_collide(_current_velocity * acceleration * delta)
+
+func _on_enemy_detector_body_entered(body: Node2D) -> void:
+	print(body, target)
+	if body.name == 'PlatformerPlayer' and target == null:
+		target = body
+
+
+func _on_body_entered(body: Node) -> void:
+	print(body)
+	if body.name == 'PlatformerPlayer':
+		pass
+	queue_free()
+
+
+func _on_enemy_detector_body_exited(body: Node2D) -> void:
+	if target != null and body == target:
+		target = null

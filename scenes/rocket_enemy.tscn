@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d15jlhxi106yp"]
+
+[ext_resource type="Script" path="res://rocket_enemy.gd" id="1_qravd"]
+[ext_resource type="PackedScene" uid="uid://caw2eqexi0lg7" path="res://scenes/missile.tscn" id="2_ef5qj"]
+[ext_resource type="Texture2D" uid="uid://biden2uovggwi" path="res://icon.svg" id="2_w3nvd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57m7j"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkmy1"]
+radius = 386.0
+
+[node name="RocketEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_qravd")
+rocket_instance = ExtResource("2_ef5qj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_w3nvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_57m7j")
+
+[node name="RocketLauncher" type="Node" parent="."]
+
+[node name="RocketLaunchTimer" type="Timer" parent="."]
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+disable_mode = 2
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+shape = SubResource("CircleShape2D_qkmy1")
+
+[connection signal="timeout" from="RocketLaunchTimer" to="." method="_on_rocket_launch_timer_timeout"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="body_exited" from="EnemyDetector" to="." method="_on_enemy_detector_body_exited"]

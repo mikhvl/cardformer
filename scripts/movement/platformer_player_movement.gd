@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 
 @export var movement_data : PlayerMovementData
+@onready var player_starting_position := self.global_position
 
-var gravity: float = ProjectSettings.get_setting('physics/2d/default_gravity')
+@onready var gravity: float = ProjectSettings.get_setting('physics/2d/default_gravity')
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_jump_timer: Timer = $Timers/CoyoteJumpTimer
